@@ -1,10 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!DOCTYPE HTML>
+<!--
+	Twenty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jennifer Lau | Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='/assets/css/main.css') }}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='/assets/assets/css/noscript.css') }}" /></noscript>
+	</head>
+	<body class="index is-preload"> <!-- .no-sidebar and .left-sidebar classes for python-projects.html and web-development-projects.html -->
+		<div id="page-wrapper">
 
-</body>
-</html>
+			<!-- Header -->
+				<header id="header">
+				<!-- class="alt" for header for home page, nav bar same colour as head section until user scrolls down far enough to turn it white and sticky-->
+					<h1 id="logo"><a href="{{ url_for('home') }}">Jennifer Lau <span>Portfolio</span></a></h1>
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="{{ url_for('home') }}">Home</a></li>
+							<li class="submenu">
+								<a href="#">Links</a>
+								<ul>
+									<li><a href="{{ url_for('load_web_dev_projects') }}">Web Development Projects</a></li>
+									<li><a href="{{ url_for('load_py_projects') }}">Python Projects</a></li>
+									<li><a href="{{ url_for('contact') }}">Contact</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</header>

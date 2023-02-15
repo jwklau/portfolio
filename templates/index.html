@@ -1,37 +1,4 @@
-<!DOCTYPE HTML>
-<!--
-	Twenty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Jennifer Lau | Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="index is-preload">
-		<div id="page-wrapper">
-
-			<!-- Header -->
-				<header id="header" class="alt">
-					<h1 id="logo"><a href="index.html">Jennifer Lau <span>Portfolio</span></a></h1>
-					<nav id="nav">
-						<ul>
-							<li class="current"><a href="index.html">Home</a></li>
-							<li class="submenu">
-								<a href="#">Links</a>
-								<ul>
-									<li><a href="web-development-projects.html">Web Development Projects</a></li>
-									<li><a href="python-projects.html">Python Projects</a></li>
-									<!-- <li><a href="contact.html">Contact</a></li> -->
-								</ul>
-							</li>
-						</ul>
-					</nav>
-				</header>
+{% include "header.html" %}
 
 			<!-- Banner -->
 				<section id="banner">
@@ -131,7 +98,7 @@
 										</header>
 										<p>First, I had to learn the basics. We all have to start somewhere, right?
 										<br>
-										<a href="web-development-projects.html#front-end">Click here to see my HTML and CSS projects.</a>
+										<a href="{{ url_for('load_web_dev_projects') }}#front-end">Click here to see my HTML and CSS projects.</a>
 										</p>
 									</section>
 
@@ -145,7 +112,7 @@
 										</header>
 										<p>Then, I learned Javascript and its various libraries and frameworks: jQuery, EJS, Node.js, React.js.
 										<br>
-										<a href="web-development-projects.html#back-end">Click here to see my Javascript and React projects.</a>
+										<a href="{{ url_for('load_web_dev_projects') }}#back-end">Click here to see my Javascript and React projects.</a>
 									</p>
 									</section>
 
@@ -159,7 +126,7 @@
 										</header>
 										<p>Finally, I tackled Python.
 										<br>
-										<a href="python-projects.html">Click here to see my Python projects.</a>
+										<a href="{{ url_for('load_py_projects') }}">Click here to see my Python projects.</a>
 										</p>
 									</section>
 
@@ -178,7 +145,7 @@
 								<div class="col-6 col-12-narrower">
 
 									<section>
-										<a href="#" class="image featured"><img src="images/flute.jpg" alt="flute" /></a>
+										<a href="#" class="image featured"><img src="{{ url_for('static', filename='/images/flute.jpg') }}" alt="flute" /></a>
 										<header>
 											<h3>I'm a musician</h3>
 										</header>
@@ -196,12 +163,12 @@
 								<div class="col-6 col-12-narrower">
 
 									<section>
-										<a href="#" class="image featured"><img src="images/bike.jpg" alt="bicyle" /></a>
+										<a href="#" class="image featured"><img src="{{ url_for('static', filename='/images/bike.jpg') }}" alt="bicyle" /></a>
 										<header>
 											<h3>I'm a newbie cyclist</h3>
 										</header>
 										<p>I learned how to ride a bicycle, as an adult! In summer 2019, I completed a one week cycling trip through Bavaria, Germany, and in summer 2021, a trip through Costa Brava, Spain.</p>
-										<a href="#"><img src="images/bike.gif" alt="bicyle gif" /></a>
+										<a href="#"><img src="{{ url_for('static', filename='/images/bike.gif') }}" alt="bicyle gif" /></a>
 									</section>
 
 								</div>
@@ -222,46 +189,14 @@
 
 					<header>
 						<h2>Like what you <strong>see</strong>?</h2>
-						<p>If you want to get in touch with me, you can send an email to jwklau87 @ gmail . com.</p>
+						<p>If you want to get in touch with me, click the button below.</p>
 					</header>
 					<footer>
-						<!-- <ul class="buttons">
-							<li><a href="#" class="button primary">I have something to say.</a></li>
-						</ul> -->
+						<ul class="buttons">
+							<li><a href="{{ url_for('contact') }}" class="button primary">I have something to say.</a></li>
+						</ul>
 					</footer>
 
 				</section>
 
-			<!-- Footer -->
-				<footer id="footer">
-
-					<ul class="icons">
-						<!-- <li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li> -->
-						<li><a href="https://www.linkedin.com/in/jennifer-lau-83739376/" class="icon brands circle fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/jwklau" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
-						<!-- <li><a href="#" class="icon circle fa-regular fa-envelope"><span class="label">Contact</span></a></li> -->
-					</ul>
-
-					<ul class="copyright">
-						
-						<li>&copy; <script type="text/javascript">
-							document.write(new Date().getFullYear());
-						  </script></li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-
-				</footer>
-
-		</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+{% include "footer.html" %}
